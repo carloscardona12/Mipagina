@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+		<title>Mi pagina</title>
+		<link rel="stylesheet" type="text/css" href="css/estilo.css">
+		
+		<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+
+
+<!--<script src="https://code.jquery.com/jquery-3.2.1.js"></script> -->
+<script>
+var current = 0;
+var imagenes = new Array();
+ 
+$(document).ready(function() {
+    var numImages = 4;
+    if (numImages <= 3) {
+        $('.right-arrow').css('display', 'none');
+        $('.left-arrow').css('display', 'none');
+    }
+ 
+    $('.left-arrow').on('click',function() {
+        if (current > 0) {
+            current = current - 1;
+        } else {
+            current = numImages - 3;
+        }
+ 
+        $(".carrusel").animate({"left": -($('#product_'+current).position().left)}, 600);
+ 
+        return false;
+    });
+ 
+    $('.left-arrow').on('hover', function() {
+        $(this).css('opacity','0.5');
+    }, function() {
+        $(this).css('opacity','1');
+    });
+ 
+    $('.right-arrow').on('hover', function() {
+        $(this).css('opacity','0.5');
+    }, function() {
+        $(this).css('opacity','1');
+    });
+ 
+    $('.right-arrow').on('click', function() {
+        if (numImages > current + 3) {
+            current = current+1;
+        } else {
+            current = 0;
+        }
+ 
+        $(".carrusel").animate({"left": -($('#product_'+current).position().left)}, 600);
+ 
+        return false;
+    }); 
+ });
+</script>
+
+
+
+
+</head>
+<body>
+	<div id="principal">
+			<header>
+				<div id="logo">
+					<h2 class="titulo">Mi biografia</h2>
+					<p class="sub-titulo">Aprendiendo un poco de mi</p>
+				</div>
+
+				<nav class="menu">
+					<ul>
+						<li><a href="index.html">Autobiografia</a></li>
+						<li><a href="pasatiempo.html">Pasatiempo</a></li>
+						<li><a href="biografia.html">Desarrollo Web</a></li>
+						
+						
+						
+					</ul>
+				</nav>
+			</header>
+
+			<main>
+			<div>
+
+				<center><h1>Pasatiempos</h1></center>
+				<p>
+					<br><br>
+					Mis pasatiempos favoritos y de los que mas me gsta hacer tratare de exlicarlos.
+					El pasatiempo que mas me ha gustao desde chico es jugar videojuegos, aun que  actualmente por la 
+					escuela en el grado de ingenieria, no he podido jugarlo por falta de tiempo ya que la escueela requiere mas tiempo o todo el tiempo que tenemos disponible para hacer proyectos y tareas aun que
+					eso nos beneficiara.
+					<br>
+					<br>
+					El otro pasatiempo es ver series y peliculas las dos son de mi grana grado, me  gustan las series 
+					que hablen sobre los tiempos pasados, como de vikingos, tipo espartanos, donde siempre habian guerras
+					para pelear por aldeas y comida y gente. las peliculas me gusta ver casi de todo tipo de peliculas.
+					<br>
+					<br>
+					Tengo otros pasatiempos que me gustan hacer es poder viajar algun lugar como las playas, conocer lugares donde se pueda conocer masg gente con quien convivir. Y las ferias como la feria de leon siempre hemos tratado de ir cada año toda mi familia.
+					<br>
+					<br>
+					Por ultimo y no menos importante pasar tiempo con mi novia que llevo cojn ella 7 años, siempre me la he pasado muy bien con ella, me ha apoyado mucho y yo a ella tratar de salir adelante los dos.
+
+					<br><br>
+
+					Me gusta mucho el futbol, mi equipo favorito en mexico es el equipo de Guadalajara.
+				</p>
+			</div>
+
+			<div class="row">
+        <div id="content" class="col-lg-12">
+            <div id="carrusel">
+                <a href="#" class="left-arrow"><img src="img/left-arrow.png" /></a>
+                <a href="#" class="right-arrow"><img src="img/right-arrow.png" /></a>
+                <div class="carrusel">
+                    <div class="product" id="product_0">
+                        <img src="img/GOT.png" width="195" height="100" />
+                        <h5>Serie Game of Thrones</h5>
+                        
+                    </div>
+                    <div class="product" id="product_1">
+                        <img src="img/yess.jpg" width="195" height="100" />
+                        <h5>Mi novia: Yesenia</h5>
+                        
+                    </div>
+                    <div class="product" id="product_2">
+                        <img src="img/ferias.jpg" width="195" height="100" />
+                        <h5>Feria en leon</h5>
+                        
+                    </div>
+                    <div class="product" id="product_3">
+                        <img src="img/chivas.png" width="195" height="100" />
+                        <h5>Mi equipo favorito</h5>
+                        
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+<!--
+			<div class="slider">
+				<ul>
+					<li><img src="img/GOT.png" width="400" height="350 alt=""></li>
+					<li><img src="img/yess.jpg" width="400" height="350 alt=""></li>
+					<li><img src="img/ferias.jpg" width="400" height="350 alt=""></li>
+					<li><img src="Imagenes/aprender1.jpg" alt=""></li>
+				</ul>
+			</div>
+-->			
+			</main>
+
+
+</body>
+</html>
